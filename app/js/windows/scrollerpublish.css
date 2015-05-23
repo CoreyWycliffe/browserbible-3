@@ -1,4 +1,4 @@
-.export-controller {
+.publish-controller {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -12,7 +12,7 @@
 	z-index: 3; /* above the text pane which is 1 and 2 */
 }
 
-.export-window-container .export-controller { 
+.publish-window-container .publish-controller { 
 	position: relative;
 	bottom: inherit;
 	left: inherit;	
@@ -22,7 +22,7 @@
 	height: 200px;
 }
 
-.export-options {
+.publish-options {
 	background: #f8f8f8;
 	position: absolute;
 	bottom: 50px;
@@ -36,27 +36,27 @@
 	z-index: 4; 
 }
 
-.export-options label {
+.publish-options label {
 	display: block;
 }
 
-.export-options .export-dramatic-option {
+.publish-options .publish-dramatic-option {
 	margin-top: 5px;
 }
 
-.export-options .export-dramatic-option label {
+.publish-options .publish-dramatic-option label {
 	display: inline-block;
 	margin-right: 10px;
 }
 
-.export-options .close-button {
+.publish-options .close-button {
 	top: 5px;
 	right: 5px;
 }
 
-.export-controller .export-play,
-.export-controller .export-prev,
-.export-controller .export-next {
+.publish-controller .publish-play,
+.publish-controller .publish-prev,
+.publish-controller .publish-next {
 	border: none;
 	background-color: #ddd;
 	border-radius: 50px;
@@ -67,25 +67,25 @@
 	left: 50%;
 }
 
-.export-controller .export-play:hover,
-.export-controller .export-prev:hover,
-.export-controller .export-next:hover {
+.publish-controller .publish-play:hover,
+.publish-controller .publish-prev:hover,
+.publish-controller .publish-next:hover {
 	background-color: #eee;
 	cursor: pointer;
 }
 
 
-.export-controller .export-play {
+.publish-controller .publish-play {
 	width: 40px;
 	height: 40px;
-	background-image: url(../../css/images/export/play-icon.svg);
+	background-image: url(../../css/images/publish/play-icon.svg);
 	background-size: 25px 25px;
 	top: 15px;
 	margin-left: -20px;
 	background-position-x: 8px;
 }
 
-.export-window-container .export-controller .export-play {
+.publish-window-container .publish-controller .publish-play {
 	width: 100px;
 	height: 100px;
 	background-size: 70px; 70px;
@@ -93,12 +93,12 @@
 	background-position-x: 20px;
 }
 
-.export-controller .export-play.playing {
-	background-image: url(../../css/images/export/pause-icon.svg);
+.publish-controller .publish-play.playing {
+	background-image: url(../../css/images/publish/pause-icon.svg);
 }
 
-.export-controller .export-prev,
-.export-controller .export-next {
+.publish-controller .publish-prev,
+.publish-controller .publish-next {
 	width: 30px;
 	height: 30px;
 	margin-left: 5px;
@@ -106,67 +106,67 @@
 	top: 20px;
 }
 
-.export-controller .export-prev {
-	background-image: url(../../css/images/export/previous-icon.svg);
+.publish-controller .publish-prev {
+	background-image: url(../../css/images/publish/previous-icon.svg);
 	margin-left: -52px;
 }
 
-.export-controller .export-next {
-	background-image: url(../../css/images/export/next-icon.svg);
+.publish-controller .publish-next {
+	background-image: url(../../css/images/publish/next-icon.svg);
 	margin-left: 24px;
 }
 
-.export-window-container .export-controller .export-prev,
-.export-window-container .export-controller .export-next {
+.publish-window-container .publish-controller .publish-prev,
+.publish-window-container .publish-controller .publish-next {
 	width: 60px;
 	height: 60px;	
 	background-size: 30px 30px;	
 	margin-top: 20px;
 }
-.export-window-container .export-controller .export-prev {
+.publish-window-container .publish-controller .publish-prev {
 	margin-left: -114px;
 }
 
-.export-window-container .export-controller .export-next {
+.publish-window-container .publish-controller .publish-next {
 	margin-left: 54px;	
 }
 
-.export-controller .export-currenttime,
-.export-controller .export-duration,
-.export-controller .export-options-button,
-.export-controller .export-title,
-.export-controller .export-subtitle {
+.publish-controller .publish-currenttime,
+.publish-controller .publish-duration,
+.publish-controller .publish-options-button,
+.publish-controller .publish-title,
+.publish-controller .publish-subtitle {
 	display: block;
 	position: absolute;
 	top: 25px;
 }
 
-.export-controller .export-currenttime {
+.publish-controller .publish-currenttime {
 	right: 50px;
 }
 
-.export-controller .export-duration {
+.publish-controller .publish-duration {
 	right: 10px;
 }
 
 /*
-.export-controller .export-title {
+.publish-controller .publish-title {
 left: 35px;
 }
 	*/
-.export-controller .export-title {
+.publish-controller .publish-title {
 	top: 20px;
 	left: 34px;
 }
 
-.export-controller .export-subtitle {
+.publish-controller .publish-subtitle {
 	top: 35px;
 	left: 34px;
 	font-size: 90%;
 	color: #888;
 }
 
-.export-controller .export-options-button {
+.publish-controller .publish-options-button {
 	left: 8px;
 	width: 20px;
 	height: 20px;
@@ -177,14 +177,14 @@ left: 35px;
 	cursor: pointer;
 }
 
-.export-controller label {
+.publish-controller label {
 	position: absolute;
 	bottom: 0;
 	left: 10px;
 	display: none;
 }
 
-.export-controller .export-slider {
+.publish-controller .publish-slider {
 	background: #ccc;
 	position: absolute;
 	top: 0;
@@ -192,12 +192,12 @@ left: 35px;
 	height: 10px;
 	width: 100%;
 }
-.export-window-container .export-slider { 
+.publish-window-container .publish-slider { 
 	top: inherit;
 	bottom: 0;
 }
 
-.export-controller .export-slider .export-slider-current {
+.publish-controller .publish-slider .publish-slider-current {
 	background: #999;
 	position: absolute;
 	top: 0;
@@ -205,7 +205,7 @@ left: 35px;
 	height: 10px;
 }
 
-.export-controller .export-slider .export-slider-loaded {
+.publish-controller .publish-slider .publish-slider-loaded {
 	background: #cc9;
 	position: absolute;
 	top: 0;
@@ -213,7 +213,7 @@ left: 35px;
 	height: 10px;
 }
 
-.export-controller .export-slider .export-slider-handle {
+.publish-controller .publish-slider .publish-slider-handle {
 	display: block;
 	border-radius: 2px;
 	border: solid 1px #aaa;

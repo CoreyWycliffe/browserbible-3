@@ -1,15 +1,15 @@
 sofia.config = $.extend(sofia.config, {
-    enableExportWindow: false
+    enablePublishWindow: false
 });
 
 
-var ExportWindow = function(id, parent, data) {
+var PublishWindow = function(id, parent, data) {
 
     var
         container =
-            $('<div class="export-window-container">'+
-            '<div class="window-header export-window-header">'+
-            '<div class="export-window-header-inner">'+
+            $('<div class="publish-window-container">'+
+            '<div class="window-header publish-window-header">'+
+            '<div class="publish-window-header-inner">'+
             '<input type="text" class="app-input text-nav" />' +
             '<div class="app-list text-list"></div>'+
             '</div>'+
@@ -19,8 +19,8 @@ var ExportWindow = function(id, parent, data) {
             '</div>').appendTo(parent.node),
 
 
-        header = container.find('.export-window-header'),
-        main = container.find('.export-window-main'),
+        header = container.find('.publish-window-header'),
+        main = container.find('.publish-window-main'),
         navui = header.find('.text-nav'),
         textlistui = header.find('.text-list'),
 
@@ -29,8 +29,8 @@ var ExportWindow = function(id, parent, data) {
         textNavigator = new TextNavigator(container, navui),
         scroller = new Scroller(main),
 
-        exportui = container.find('.publish-button'),
-        exportController = new ExportController(id, main, null, null);
+        publishui = container.find('.publish-button'),
+        publishController = new PublishController(id, main, null, null);
 
 
 
@@ -48,7 +48,7 @@ var ExportWindow = function(id, parent, data) {
 
         var data = {
             params: {
-                'win': 'export'
+                'win': 'publish'
             }
         };
 
@@ -82,17 +82,17 @@ var ExportWindow = function(id, parent, data) {
 
 sofia.initMethods.push(function() {
 
-    if (sofia.config.enableExportWindow) {
+    if (sofia.config.enablePublishWindow) {
 
         sofia.windowTypes.push( {
-            className:'ExportWindow',
-            param: 'export',
+            className:'PublishWindow',
+            param: 'publish',
             paramKeys: {
                 'textid': 't',
                 'fragmentid':'v'
             },
             init: {
-                'textid':sofia.config.newExportWindowTextId,
+                'textid':sofia.config.newPublishWindowTextId,
                 'fragmentid':''
             }
         });

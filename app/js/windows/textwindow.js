@@ -54,8 +54,8 @@ var TextWindow = function(id, parent, init_data, text_type) {
 		audioui = container.find('.audio-button'),
 		audioController = new AudioController(id, container, audioui, scroller),
 
-        exportui = container.find('.publish-button'),
-		exportController = new ExportController(id, container, exportui, scroller),
+        publishui = container.find('.publish-button'),
+		publishController = new PublishController(id, container, publishui, scroller),
 
 		// settings
 		currentTextInfo = null,
@@ -63,9 +63,8 @@ var TextWindow = function(id, parent, init_data, text_type) {
 		hasFocus = false,
 		isInitialized = false;
 
-
     if(typeof sofia.customConfigs.publishServerPath === 'undefined') {
-        publishBtn.hide();
+        publishui.hide();
     }
 
 	/*
@@ -431,6 +430,7 @@ var TextWindow = function(id, parent, init_data, text_type) {
 		parent.tab.find('span').html( currentTextInfo.abbr );
 		textNavigator.setTextInfo(currentTextInfo);
 		audioController.setTextInfo(currentTextInfo);
+        publishController.setTextInfo(currentTextInfo);
 
 		scroller.setTextInfo(currentTextInfo);
 
@@ -472,7 +472,7 @@ var TextWindow = function(id, parent, init_data, text_type) {
 	$(window).on('resize', moveIcons);
 
 	var iconsAreNormal = true;
-/*	function moveIcons() {
+	function moveIcons() {
 		
 		// 2014-01-14 - maybe no longer do this
 		return;
@@ -488,7 +488,7 @@ var TextWindow = function(id, parent, init_data, text_type) {
 
 			audioui.appendTo(tcHeader);
 			infoBtn.appendTo(tcHeader);
-            publishBtn.appendTo(tcHeader);
+            publishui.appendTo(tcHeader);
 
 			iconsAreNormal = false;
 		}
@@ -504,7 +504,7 @@ var TextWindow = function(id, parent, init_data, text_type) {
 
 			audioui.appendTo(headerInner);
 			infoBtn.appendTo(headerInner);
-            publishBtn.appendTo(tcHeader);
+            publishui.appendTo(tcHeader);
 
 			iconsAreNormal = true;
 		}
@@ -512,7 +512,7 @@ var TextWindow = function(id, parent, init_data, text_type) {
 
 	};
 	moveIcons();
-*/
+
 	function getData() {
 		// get data
 		if (currentTextInfo == null) {
@@ -556,7 +556,7 @@ var TextWindow = function(id, parent, init_data, text_type) {
 		textChooser.close();
 		textNavigator.close();
 		audioController.close();
-        exportController.close();
+        publishController.close();
 
 		ext.clearListeners();
 	}
