@@ -40,7 +40,7 @@ var TextWindow = function(id, parent, init_data, text_type) {
 		header = container.find('.scroller-header'),
 		main = container.find('.scroller-main'),
 		info = container.find('.scroller-info'),
-        publishBtn = container.find('.publish-button'),
+        //publishBtn = container.find('.publish-button'),
 		infoBtn = container.find('.info-button'),
 		wrapper = container.find('.scroller-text-wrapper'),
 		navui = header.find('.text-nav'),
@@ -53,6 +53,9 @@ var TextWindow = function(id, parent, init_data, text_type) {
 
 		audioui = container.find('.audio-button'),
 		audioController = new AudioController(id, container, audioui, scroller),
+
+        exportui = container.find('.publish-button'),
+		exportController = new ExportController(id, container, exportui, scroller),
 
 		// settings
 		currentTextInfo = null,
@@ -124,13 +127,12 @@ var TextWindow = function(id, parent, init_data, text_type) {
 
 	});
 
-    // submit the publish request to the server
+    /* submit the publish request to the server
     publishBtn.on('click', function() {
-        // TODO: post the publish commands
         $.post(sofia.customConfigs.publishServerPath, {}, function(data, textStatus, jqXHR ) {
             alert(data);
         });
-    });
+    });*/
 
 
 	// DOM to object stuff
@@ -470,7 +472,7 @@ var TextWindow = function(id, parent, init_data, text_type) {
 	$(window).on('resize', moveIcons);
 
 	var iconsAreNormal = true;
-	function moveIcons() {
+/*	function moveIcons() {
 		
 		// 2014-01-14 - maybe no longer do this
 		return;
@@ -510,7 +512,7 @@ var TextWindow = function(id, parent, init_data, text_type) {
 
 	};
 	moveIcons();
-
+*/
 	function getData() {
 		// get data
 		if (currentTextInfo == null) {
@@ -554,6 +556,7 @@ var TextWindow = function(id, parent, init_data, text_type) {
 		textChooser.close();
 		textNavigator.close();
 		audioController.close();
+        exportController.close();
 
 		ext.clearListeners();
 	}

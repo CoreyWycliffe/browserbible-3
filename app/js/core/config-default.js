@@ -53,6 +53,9 @@ sofia.config = {
 	// new commentary window
 	newCommentaryWindowTextId: 'comm_eng_wesley',
 
+    // new export window
+    newExportWindowTextId: 'export',
+
 	// language for top
 	pinnedLanguage: 'English',
 	
