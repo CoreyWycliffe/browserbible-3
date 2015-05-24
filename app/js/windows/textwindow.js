@@ -63,7 +63,7 @@ var TextWindow = function(id, parent, init_data, text_type) {
 		hasFocus = false,
 		isInitialized = false;
 
-    if(typeof sofia.customConfigs.publishServerPath === 'undefined') {
+    if(typeof sofia.customConfigs.publishServerPath === 'undefined' || text_type != 'bible') {
         publishui.hide();
     }
 
