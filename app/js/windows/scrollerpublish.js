@@ -2,7 +2,19 @@
 var PublishController = function(id, container, ui, scroller) {
 
 	var block = $(
-				'<div class="publish-controller">Hello World' +
+				'<div class="publish-controller">' +
+					'<div class="publish-column">' +
+						'<p>Language, Translation: <select id="publish-language-resource"></select></p>' +
+						'<p>Book: <select id="publish-book"></select></p>' +
+					'</div>' +
+					'<div class="publish-column">' +
+						'<p>Chapter Selection Start: <select id="publish-chapter-start"></select></p>' +
+						'<p>Chapter Selection End: <select id="publish-chapter-end"></select></p>' +
+					'</div>' +
+					'<div class="publish-column">' +
+						'<p>File Format: <select id="publish-format"></select></p>' +
+						'<p><button id="publish-export-now">Export Now</button></p>' +
+					'</div>' +
 				'</div>'
 				).appendTo(container),
 		optionsButton = block.find('.publish-options-button'),
@@ -67,7 +79,7 @@ var PublishController = function(id, container, ui, scroller) {
 		options.hide();
 		$(document).off('click', doc_click);
 	});
-
+	
 
 	// click off functionality
 	function doc_click(e) {
